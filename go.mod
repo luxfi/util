@@ -1,4 +1,4 @@
-module github.com/luxfi/utils
+module github.com/luxfi/util
 
 go 1.26.4
 
