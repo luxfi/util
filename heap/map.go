@@ -23,10 +23,8 @@ func MapValues[K comparable, V any](m Map[K, V]) []V {
 func NewMap[K comparable, V any](less func(a, b V) bool) Map[K, V] {
 	return Map[K, V]{
 		queue: &indexedQueue[K, V]{
-			queue: queue[entry[K, V]]{
-				less: func(a, b entry[K, V]) bool {
-					return less(a.v, b.v)
-				},
+			less: func(a, b entry[K, V]) bool {
+				return less(a.v, b.v)
 			},
 			index: make(map[K]int),
 		},
